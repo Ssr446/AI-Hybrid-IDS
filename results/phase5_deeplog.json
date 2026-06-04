@@ -1,0 +1,14 @@
+{
+  "method": "DeepLog (n-gram LSTM baseline)",
+  "dataset": "BGL",
+  "f1": 0.898,
+  "precision": 0.835,
+  "recall": 0.9712,
+  "fpr": 0.0634,
+  "tp": 93478,
+  "fp": 18469,
+  "tn": 273010,
+  "fn": 2776,
+  "latency_ms_per_window": 0.0266,
+  "train_time_sec": 0.3
+}

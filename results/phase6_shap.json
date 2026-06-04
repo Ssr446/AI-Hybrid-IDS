@@ -1,0 +1,39 @@
+{
+  "BGL": {
+    "seq_len": 0.0,
+    "fatal_count": 0.0,
+    "error_count": 0.26265825574554075,
+    "warn_count": 0.0071042249312200404,
+    "kern_count": 0.011623950763910701,
+    "app_count": 0.0,
+    "ciod_count": 0.04790646640007102,
+    "timeout_count": 0.0021474362059879636,
+    "mem_count": 0.13969566919599097,
+    "fatal_type_ct": 0.10425009380393821,
+    "fatal_ratio": 0.0,
+    "error_ratio": 0.3050223778086472,
+    "unique_ratio": 0.11716178344892018,
+    "unique_nodes": 0.002429722872733889
+  },
+  "HDFS": {
+    "seq_len": 0.253297846808295,
+    "error_count": 0.13268362354771424,
+    "error_ratio": 0.1407513166736011,
+    "replicate_count": 0.00024405491181955793,
+    "max_block_size": 0.011417536144295134,
+    "unique_event_ratio": 0.19539235186995693,
+    "unique_components": 0.0,
+    "count_E1": 0.0006532366813312224,
+    "count_E2": 0.1397629178335804,
+    "count_E3": 0.0,
+    "count_E4": 0.12566680133951053,
+    "count_E5": 0.0,
+    "count_E6": 0.0,
+    "count_E7": 0.0,
+    "count_E8": 0.0,
+    "count_E9": 0.0,
+    "count_E10": 0.0001303050542220389,
+    "count_E11": 0.0,
+    "count_E12": 0.0
+  }
+}

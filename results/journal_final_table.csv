@@ -1,0 +1,5 @@
+Dataset,Samples,Rule F1,IF F1,Hybrid F1,Hybrid Prec,Hybrid Rec,Hybrid FPR,Latency (ms)
+OpenSSH,"655,147 logs",0.9653,0.9088,0.9654,0.9997,0.9333,0.0003,0.0101
+HDFS,"575,061 blocks",0.3274,0.2337,0.5281,0.5806,0.4843,0.0106,0.0049
+BGL,"387,733 windows",0.777,0.6349,0.7762,0.7343,0.8231,0.0984,0.0023
+Thunderbird,"493,404 windows",0.4658,0.6086,0.4659,0.3037,0.9998,0.366,0.0023

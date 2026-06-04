@@ -1,0 +1,45 @@
+{
+  "dataset": "Thunderbird",
+  "total": 493404,
+  "normal": 425468,
+  "anomaly": 67936,
+  "alpha": 0.55,
+  "threshold": 0.4,
+  "ablation": [
+    {
+      "method": "Rule Only",
+      "precision": 0.3036,
+      "recall": 0.9998,
+      "f1": 0.4658,
+      "fpr": 0.3661,
+      "tp": 67920,
+      "fp": 155760,
+      "tn": 269708,
+      "fn": 16
+    },
+    {
+      "method": "Isolation Forest Only",
+      "precision": 0.4375,
+      "recall": 0.9998,
+      "f1": 0.6086,
+      "fpr": 0.2053,
+      "tp": 67921,
+      "fp": 87329,
+      "tn": 338139,
+      "fn": 15
+    },
+    {
+      "method": "Hybrid (Rule + IF)",
+      "precision": 0.3037,
+      "recall": 0.9998,
+      "f1": 0.4659,
+      "fpr": 0.366,
+      "tp": 67920,
+      "fp": 155731,
+      "tn": 269737,
+      "fn": 16
+    }
+  ],
+  "latency_ms_per_window": 0.0023,
+  "total_time_sec": 272.0
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "dataset": "BGL",
+    "folds": 5,
+    "f1_mean": 0.7747,
+    "f1_std": 0.0027,
+    "p_mean": 0.7316,
+    "p_std": 0.003,
+    "r_mean": 0.8231,
+    "r_std": 0.0027,
+    "fpr_mean": 0.0997,
+    "fpr_std": 0.0013
+  },
+  {
+    "dataset": "HDFS",
+    "folds": 5,
+    "f1_mean": 0.492,
+    "f1_std": 0.0244,
+    "p_mean": 0.5089,
+    "p_std": 0.0601,
+    "r_mean": 0.4804,
+    "r_std": 0.0248,
+    "fpr_mean": 0.0144,
+    "fpr_std": 0.0037
+  },
+  {
+    "dataset": "OpenSSH",
+    "folds": 5,
+    "f1_mean": 0.9654,
+    "f1_std": 0.0021,
+    "p_mean": 0.9997,
+    "p_std": 0.0002,
+    "r_mean": 0.9333,
+    "r_std": 0.0087,
+    "fpr_mean": 0.0003,
+    "fpr_std": 0.0001
+  }
+]

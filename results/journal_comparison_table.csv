@@ -1,0 +1,5 @@
+Dataset,Method,F1-Score,Precision,Recall,FPR,Latency (ms)
+OpenSSH,Hybrid (Rule + IF),0.9654,0.9997,0.9333,0.0003,0.0101
+HDFS,Hybrid (Rule + IF),0.5281,0.5806,0.4843,0.0106,N/A
+BGL,Hybrid (Rule + IF),0.7762,0.7343,0.8231,0.0984,0.0023
+Thunderbird,Pending,---,---,---,---,---

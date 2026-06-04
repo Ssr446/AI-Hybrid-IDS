@@ -1,0 +1,54 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+.venv/
+env/
+venv/
+
+# C environments
+*.so
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# MacOS
+.DS_Store
+
+# Streamlit config (if you have secrets)
+.streamlit/secrets.toml
+
+# Exclude generated research papers & reports (User requested)
+*.docx
+*.pdf
+
+# Exclude debugging and temporary scripts (User requested)
+debug_live_tester.py
+_append_shap_page.py
+generate_both_docs.py
+generate_ieee_paper.py
+generate_ijvra_paper.py
+generate_long_paper.py
+generate_paper.py
+generate_springer_paper.py
+read_format.py
+
+# Models & Data (Optional: keeping small models if they fit, but usually good to ignore large data)
+# data/   # Uncomment if data folder is too large (> 100MB)

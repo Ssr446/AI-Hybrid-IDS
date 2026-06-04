@@ -1,0 +1,10 @@
+Download from: https://zenodo.org/records/8196385
+
+Place these files here:
+  SSH_2k.log          (required - SSH logs)
+  HDFS.log            (optional - HDFS system logs)
+  anomaly_label.csv   (optional - HDFS ground truth labels)
+  Apache_2k.log       (optional - Apache web logs)
+  Linux_2k.log        (optional - Linux syslog)
+
+Then run:  python train.py

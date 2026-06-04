@@ -1,0 +1,14 @@
+{
+  "best_alpha": 0.4,
+  "best_threshold": 0.45,
+  "best_f1": 0.5281,
+  "best_precision": 0.5806,
+  "best_recall": 0.4843,
+  "best_fpr": 0.0106,
+  "confusion": {
+    "tp": 8155,
+    "fp": 5891,
+    "tn": 552332,
+    "fn": 8683
+  }
+}

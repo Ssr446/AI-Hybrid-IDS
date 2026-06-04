@@ -1,0 +1,45 @@
+{
+  "dataset": "BGL",
+  "total": 387733,
+  "normal": 291479,
+  "anomaly": 96254,
+  "alpha": 0.55,
+  "threshold": 0.4,
+  "ablation": [
+    {
+      "method": "Rule Only",
+      "precision": 0.7359,
+      "recall": 0.823,
+      "f1": 0.777,
+      "fpr": 0.0975,
+      "tp": 79215,
+      "fp": 28432,
+      "tn": 263047,
+      "fn": 17039
+    },
+    {
+      "method": "Isolation Forest Only",
+      "precision": 0.5935,
+      "recall": 0.6827,
+      "f1": 0.6349,
+      "fpr": 0.1544,
+      "tp": 65708,
+      "fp": 45009,
+      "tn": 246470,
+      "fn": 30546
+    },
+    {
+      "method": "Hybrid (Rule + IF)",
+      "precision": 0.7343,
+      "recall": 0.8231,
+      "f1": 0.7762,
+      "fpr": 0.0984,
+      "tp": 79227,
+      "fp": 28668,
+      "tn": 262811,
+      "fn": 17027
+    }
+  ],
+  "latency_ms_per_window": 0.0023,
+  "total_time_sec": 113.3
+}

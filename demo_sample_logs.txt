@@ -1,0 +1,73 @@
+=== PREPARED DEMO PAYLOADS ===
+Keep this file open during your demo. You can copy and paste these exact blocks into the dashboard's "Live Log Tester" tab to prove your system works in different scenarios.
+
+--------------------------------------------------------------------------------
+🔥 SCENARIO 1: The "Alert Fatigue" Brute Force Attack
+(This models a classic brute-force attack. Your AI and Rule Engine will catch it and SHAP will highlight `ip_fail_count` and `request_burst_score`.)
+--------------------------------------------------------------------------------
+
+Jun 14 15:10:01 server1 sshd[1234]: Failed password for root from 192.168.1.100 port 44322 ssh2
+Jun 14 15:10:02 server1 sshd[1234]: Connection closed by 192.168.1.100 port 44322 [preauth]
+Jun 14 15:10:04 server1 sshd[1235]: Failed password for root from 192.168.1.100 port 44324 ssh2
+Jun 14 15:10:05 server1 sshd[1235]: Connection closed by 192.168.1.100 port 44324 [preauth]
+Jun 14 15:10:07 server1 sshd[1236]: Failed password for root from 192.168.1.100 port 44326 ssh2
+Jun 14 15:10:08 server1 sshd[1236]: Connection closed by 192.168.1.100 port 44326 [preauth]
+Jun 14 15:10:10 server1 sshd[1237]: Failed password for root from 192.168.1.100 port 44328 ssh2
+Jun 14 15:10:11 server1 sshd[1237]: Connection closed by 192.168.1.100 port 44328 [preauth]
+Jun 14 15:10:13 server1 sshd[1238]: Failed password for root from 192.168.1.100 port 44330 ssh2
+Jun 14 15:10:14 server1 sshd[1238]: Connection closed by 192.168.1.100 port 44330 [preauth]
+Jun 14 15:10:16 server1 sshd[1239]: Failed password for root from 192.168.1.100 port 44332 ssh2
+Jun 14 15:10:17 server1 sshd[1239]: Connection closed by 192.168.1.100 port 44332 [preauth]
+Jun 14 15:10:19 server1 sshd[1240]: Failed password for root from 192.168.1.100 port 44334 ssh2
+Jun 14 15:10:20 server1 sshd[1240]: Connection closed by 192.168.1.100 port 44334 [preauth]
+Jun 14 15:10:22 server1 sshd[1241]: Failed password for root from 192.168.1.100 port 44336 ssh2
+Jun 14 15:10:23 server1 sshd[1241]: Connection closed by 192.168.1.100 port 44336 [preauth]
+Jun 14 15:10:25 server1 sshd[1242]: Failed password for root from 192.168.1.100 port 44338 ssh2
+Jun 14 15:10:26 server1 sshd[1242]: Connection closed by 192.168.1.100 port 44338 [preauth]
+Jun 14 15:10:28 server1 sshd[1243]: Failed password for root from 192.168.1.100 port 44340 ssh2
+Jun 14 15:10:29 server1 sshd[1243]: Connection closed by 192.168.1.100 port 44340 [preauth]
+Jun 14 15:10:31 server1 sshd[1244]: Failed password for root from 192.168.1.100 port 44342 ssh2
+Jun 14 15:10:32 server1 sshd[1244]: Connection closed by 192.168.1.100 port 44342 [preauth]
+Jun 14 15:10:34 server1 sshd[1245]: Failed password for root from 192.168.1.100 port 44344 ssh2
+
+
+--------------------------------------------------------------------------------
+✅ SCENARIO 2: Normal, Healthy Traffic
+(Use this to prove your system doesn't just flag everything as an attack. This represents a normal sysadmin logging in and doing work. The Threat Score should be very low.)
+--------------------------------------------------------------------------------
+
+Jun 15 09:12:01 server1 sshd[4421]: Accepted publickey for admin from 10.0.0.50 port 55122 ssh2: RSA SHA256:xxxyyyzzz
+Jun 15 09:12:01 server1 sshd[4421]: pam_unix(sshd:session): session opened for user admin by (uid=0)
+Jun 15 09:35:45 server1 sshd[4421]: pam_unix(sshd:session): session closed for user admin
+Jun 15 10:05:12 server1 sshd[5112]: Accepted password for jeyanirudh from 10.0.0.60 port 49012 ssh2
+Jun 15 10:05:12 server1 sshd[5112]: pam_unix(sshd:session): session opened for user jeyanirudh by (uid=0)
+
+
+--------------------------------------------------------------------------------
+🔥 SCENARIO 3: User Enumeration Attack (Testing for existing accounts)
+(This is a smarter attack where the hacker tries different usernames. Your system tracks `unique_users_targeted` and will flag this anomaly!)
+--------------------------------------------------------------------------------
+
+Jun 16 02:14:01 server1 sshd[9001]: Invalid user oracle from 103.45.67.89
+Jun 16 02:14:02 server1 sshd[9001]: Connection closed by invalid user oracle 103.45.67.89 port 33112 [preauth]
+Jun 16 02:14:05 server1 sshd[9002]: Invalid user postgres from 103.45.67.89
+Jun 16 02:14:06 server1 sshd[9002]: Connection closed by invalid user postgres 103.45.67.89 port 33114 [preauth]
+Jun 16 02:14:09 server1 sshd[9003]: Invalid user nginx from 103.45.67.89
+Jun 16 02:14:10 server1 sshd[9003]: Connection closed by invalid user nginx 103.45.67.89 port 33116 [preauth]
+Jun 16 02:14:13 server1 sshd[9004]: Invalid user git from 103.45.67.89
+Jun 16 02:14:14 server1 sshd[9004]: Connection closed by invalid user git 103.45.67.89 port 33118 [preauth]
+Jun 16 02:14:16 server1 sshd[9005]: Invalid user deploy from 103.45.67.89
+Jun 16 02:14:17 server1 sshd[9005]: Connection closed by invalid user deploy 103.45.67.89 port 33120 [preauth]
+Jun 16 02:14:19 server1 sshd[9006]: Invalid user docker from 103.45.67.89
+
+
+--------------------------------------------------------------------------------
+🔥 SCENARIO 4: HDFS (Hadoop) Failed Block Transfer Sequence 
+(If the examiner asks if it works on things other than SSH, paste this distributed file system anomaly!)
+--------------------------------------------------------------------------------
+
+081109 203518 143 INFO dfs.DataNode$DataXceiver: Receiving block blk_-1608999687919862906 src: /10.250.19.102:54106 dest: /10.250.19.102:50010
+081109 203518 35 INFO dfs.FSNamesystem: BLOCK* NameSystem.addStoredBlock: blockMap updated: 10.250.19.102:50010 is added to blk_-1608999687919862906 size 67108864
+081109 203519 144 WARN dfs.DataNode$DataXceiver: 10.250.19.102:50010:Got exception while serving blk_-1608999687919862906 to /10.251.122.95:
+081109 203520 145 INFO dfs.DataNode$DataXceiver: java.io.IOException: Connection reset by peer
+081109 203521 146 INFO dfs.DataNode$DataXceiver: 10.250.19.102:50010:Got exception while serving blk_-1608999687919862906 to /10.251.122.95:
