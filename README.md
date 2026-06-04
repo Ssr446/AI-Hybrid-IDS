@@ -1,20 +1,36 @@
 <div align="center">
   <h1>🛡️ AI-Assisted Hybrid Vulnerability Detection System</h1>
   <p><strong>A Real-Time, Explainable Threat Detection Engine for Security Operations Centers (SOCs)</strong></p>
+  
+  [![Live Demo](https://img.shields.io/badge/Live_Demo-Streamlit_Cloud-FF4B4B?style=for-the-badge&logo=streamlit)](https://ai-hybrid-ids-mq6frlreyokd3wdtsnncy5.streamlit.app/)
+  
+  <br />
+  <!-- Drop your dashboard screenshot inside the assets/ folder and name it dashboard_screenshot.png -->
+  <img src="assets/dashboard_screenshot.png" alt="Dashboard Screenshot" width="800"/>
 </div>
 
 <br />
 
-## 📖 Overview
+## 📖 Research Context & Overview
 
-Traditional Intrusion Detection Systems (IDS) rely heavily on static rule-based engines (like Snort) which are highly accurate but completely blind to zero-day (novel) attacks. Conversely, deep learning models (like DeepLog) can detect zero-days but suffer from unacceptable false-positive rates, high computational overhead, and "black-box" decision-making.
+### The Base Paper & Problem
+Recent state-of-the-art anomaly detection systems in cybersecurity heavily rely on Deep Learning models like **DeepLog** (LSTM) or **LogBERT**. While highly effective at identifying zero-day anomalies, these base architectures suffer from two critical flaws when deployed in real-world Security Operations Centers (SOCs):
+1. **The "Black Box" Problem:** Analysts are given an anomaly score but no explanation as to *why* the sequence was flagged.
+2. **Alert Fatigue:** Pure unsupervised learning over low-context logs results in prohibitively high False Positive Rates (FPR).
 
-This project implements an **optimized Hybrid Pipeline** that bridges the gap. It fuses a deterministic Cybersecurity Rule Engine (12 signatures) with an unsupervised AI Anomaly Detector (Isolation Forest) using a weighted mathematical fusion equation. 
+### Our Novel Addition
+This project completely rearchitects the intrusion detection pipeline. Instead of relying purely on deep learning, we propose an **Optimized Hybrid Pipeline**. It runs in parallel:
+- A deterministic **Cybersecurity Rule Engine** (12 signatures mimicking tools like Snort).
+- An unsupervised **Isolation Forest (AI)** array.
 
-**Key Achievements:**
-- ⚡ **Ultra-Low Latency:** Inference speed of **0.0101 ms/log**, running entirely on a commodity CPU (11x faster than DeepLog baselines).
-- 🎯 **High Precision:** Achieves **0.9997 Precision** and a False Positive Rate (FPR) of **0.0003** on the Loghub OpenSSH dataset.
-- 🧠 **Explainable AI (XAI):** Features an interactive Dashboard that uses **SHAP (Shapley Additive exPlanations)** to reverse-engineer the AI's logic, showing analysts exactly *why* an alert was triggered.
+Furthermore, we solve the Black Box problem by integrating **SHAP (Shapley Additive exPlanations)** directly into the real-time inference pipeline, allowing the system to mathematically reverse-engineer its own AI decisions and present them visually to security analysts.
+
+### The Hybrid Fusion Formula
+To bridge deterministic security rules with probabilistic AI, we developed a weighted scalar fusion layer. The outputs of both parallel engines are normalized and combined using the following formula:
+
+> **$\text{ThreatScore} = \alpha \times \text{RuleScore} + (1 - \alpha) \times \text{AnomalyScore}$**
+
+Where `α` (Alpha) is a hyperparameter determining the trust weight assigned to hard rules versus AI intuition (calibrated to `0.55` for OpenSSH).
 
 ---
 
@@ -60,6 +76,12 @@ graph TD
 1. **Live Log Tester UI:** Paste raw SSH, Apache, HDFS, or Linux logs into the dashboard to parse and score them in real-time.
 2. **SHAP Waterfall Charts:** Instantly see which mathematical features (e.g., `ip_fail_count`, `is_invalid_user`) contributed most to the AI's anomaly score.
 3. **Multi-Dataset Support:** Pre-configured extraction pipelines for OpenSSH, HDFS, BGL, and Thunderbird supercomputer logs.
+
+<!-- Drop your SHAP chart inside the assets/ folder and name it shap_chart.png -->
+<div align="center">
+  <img src="assets/shap_chart.png" alt="SHAP Explainability Chart" width="600"/>
+</div>
+
 4. **Automated Research Pipelines:** Includes scripts for 5-Fold Cross Validation, Alpha Parameter Sensitivity sweeping, and comparative ablation against LSTM baselines.
 
 ---
