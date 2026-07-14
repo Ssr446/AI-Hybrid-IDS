@@ -92,7 +92,7 @@ Ensure you have Python 3.9+ installed on your system.
 
 **1. Clone the repository**
 ```bash
-git clone https://github.com/YOUR-USERNAME/AI-Hybrid-IDS.git
+git clone https://github.com/Ssr446/AI-Hybrid-IDS.git
 cd AI-Hybrid-IDS
 ```
 
